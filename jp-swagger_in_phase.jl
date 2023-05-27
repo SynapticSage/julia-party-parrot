@@ -40,7 +40,7 @@ freq = 3 * 2π / length(tints_and_shades)
 
 # Create the animation
 anim = @animate for i in 1:length(tints_and_shades)
-    p = plot(size=(500,500), xlim=(-2,2), ylim=(-2,2), aspect_ratio=:equal, showaxis=false)
+    p = plot(size=(500,500), xlim=(-2,2), ylim=(-2,2), aspect_ratio=:equal, showaxis=false, grid=false)
     
     for j in 1:3
         x = x_base[j] + amp * cos(freq * i)

@@ -34,10 +34,10 @@ end
 
 # Create the animation
 anim = @animate for i in 1:length(tints_and_shades)
-    p = plot(size=(500,500), xlim=(-2,2), ylim=(-2,2), aspect_ratio=:equal, showaxis=false)
+    p = plot(size=(500,500), xlim=(-2,2), ylim=(-2,2), aspect_ratio=:equal, showaxis=false, grid=false)
     scatter!([0], [1], markersize=80, color=tints_and_shades[mod1(i, length(tints_and_shades))], label=false)
     scatter!([sqrt(3)/2], [-0.5], markersize=80, color=tints_and_shades[mod1(i+1, length(tints_and_shades))], label=false)
-    scatter!([-sqrt(3)/2], [-0.5], markersize=80, color=tints_and_shades[mod1(i+2, length(tints_and_shades))], label=false, grid=false, )
+    scatter!([-sqrt(3)/2], [-0.5], markersize=80, color=tints_and_shades[mod1(i+2, length(tints_and_shades))], label=false)
 end
 
 # Save the animation as a gif
