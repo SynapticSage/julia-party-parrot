@@ -37,16 +37,17 @@ y_base = [1, -0.5, -0.5]
 # Define the amplitude and frequency for the elliptical motion
 amp = 0.2
 freq = 3 * 2π / length(tints_and_shades)
+l=2
 
 # Create the animation
 anim = @animate for i in 1:length(tints_and_shades)
-    p = plot(size=(500,500), xlim=(-2,2), ylim=(-2,2), aspect_ratio=:equal, showaxis=false, grid=false)
+    p = plot(size=(500,500), xlim=(-l,l), ylim=(-l,l), aspect_ratio=:equal, showaxis=false, grid=false)
     
     for j in 1:3
         x = x_base[j] + amp * cos(freq * i)
         y = y_base[j] + amp * sin(freq * i)
         color = tints_and_shades[mod1(i+j-1, length(tints_and_shades))]
-        scatter!([x], [y], markersize=80, color=color, label=false)
+        scatter!([x], [y], markersize=90, color=color, label=false)
     end
 end
 
