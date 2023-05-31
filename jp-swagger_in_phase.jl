@@ -41,7 +41,9 @@ l=2
 
 # Create the animation
 anim = @animate for i in 1:length(tints_and_shades)
-    p = plot(size=(500,500), xlim=(-l,l), ylim=(-l,l), aspect_ratio=:equal, showaxis=false, grid=false)
+    p = plot(size=(500,500), xlim=(-l,l), ylim=(-l,l), aspect_ratio=:equal,
+        background_color=RGBA(0,0,0,0), foreground_color=RGBA(0,0,0,0),
+        showaxis=false, grid=false)
     
     for j in 1:3
         x = x_base[j] + amp * cos(freq * i)
